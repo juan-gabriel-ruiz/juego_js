@@ -16,7 +16,7 @@ body {
 
 h1 {
   text-align: center;
-  font-size: 10rem;
+  font-size: 6rem;
   line-height: 1;
   margin-bottom: 0;
 }
@@ -24,7 +24,15 @@ h1 {
 button {
   background: rgb(20, 179, 20);
   padding: 0.5rem;
+  margin: 1rem auto;
+  display: block;
 }
+
+button h2 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
 .score {
   background: rgba(255,255,255,0.2);
   padding: 0 3rem;
@@ -33,11 +41,12 @@ button {
 }
 
 .game {
-  width: 600px;
-  height: 400px;
+  width: 90vw;
+  max-width: 600px;
+  aspect-ratio: 3 / 2;
   display: flex;
   flex-wrap: wrap;
-  margin: 0 auto;
+  margin: 1rem auto;
 }
 
 .hole {
@@ -52,7 +61,7 @@ button {
   background-size: contain;
   content: '';
   width: 100%;
-  height:70px;
+  height: 70px;
   position: absolute;
   z-index: 2;
   bottom: -30px;
@@ -65,9 +74,24 @@ button {
   top: 100%;
   width: 100%;
   height: 100%;
-  transition:all 0.4s;
+  transition: all 0.4s;
 }
 
 .hole.up .mole {
   top: 0;
+}
+
+/* 👇 Media queries para móviles */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  button h2 {
+    font-size: 2rem;
+  }
+
+  .score {
+    padding: 0 2rem;
+  }
 }
